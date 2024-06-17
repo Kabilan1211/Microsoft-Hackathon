@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Form</title>
+</head>
+<body>
+    <h1>Machine Learning Prediction</h1>
+    <form method="post">
+        {% for i in range(1, 4) %}
+            <input type="text" id="var{{ i }}" name="var{{ i }}" value="{{ request.args.get('var' + i|tostr, '') }}">
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+    
+</body>
+</html>
